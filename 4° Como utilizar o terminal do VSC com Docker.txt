@@ -1,0 +1,10 @@
+
+1° Vamos utilizar o comando -> docker ps pra ver se ta rodando o container.
+
+2° Com o comando -> docker exec -it id_do_container bash.
+  - vamos entrar no container e poderemos rodar nossos arquivos .
+
+3° navegue até a pasta do seu arquivo.
+obs: Agora dentro do container devemos usar so comando linux
+
+  - digite -> php index.php , que é o meu caso, e aparecerar o resultado das variaveis no seu terminal.

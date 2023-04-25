@@ -1,0 +1,50 @@
+O que é o docker-compose ?
+O docker-compose é uma ferramenta cujo o objetivo é facilitar o processo de executar containers docker de forma declarativa.
+ Cada container é executado como um serviço.
+
+O arquivo utilizado para que o docker-compose seja executado com sucesso chama-se por padrão docker-compose.yaml.
+
+Vamos criar um arquivo na pasta raiz do projeto chamado docker-compose.yaml , como o exemplo abaixo dentro.
+
+
+Exemplo:
+
+version: "4.1"
+
+services:
+  php:
+    image: php:7.4.30-apache
+    container_name: serve-php
+    ports:
+      - "80:80"
+    volumes: 
+      - ./:/var/www/html
+
+
+
+Esse serviço acima fara com que tudo que eu alterar no computador sera refletido no container.
+
+Em volumes o que está antes de : e meu computador e o que está depois de : e meu container.
+
+
+
+Agora para iniciarmos o ambiente usaremos o comando -> docker-compose up -d
+
+  OBS: As vezes ao usar o comando acima pode aparecer um erro chamado : (root) Additional property php is not allowed.
+  Este erro também pode ser causado se você especificar a versão antiga "3.6". Você deve aumentar para "3,8" ou pela versao
+  quebrada exemplo em vez de -> version: "4.17" eu coloquei version: "4.1" , com o valor arredondado e funcionou.
+
+1 - Este comando irá baixar a imagem do PHP 7.4 com Apache, criar um contêiner com base na configuração definida no arquivo
+docker-compose.yml e iniciar o contêiner em segundo plano.
+
+2 - Abra um navegador e acesse http://localhost:8080 para verificar se o ambiente PHP com Docker foi configurado corretamente.
+
+Pronto! Agora você tem um ambiente PHP com Docker funcionando no seu Windows.
+
+
+Agora é só copiar seu arquivo para o servidor 
+
+ com o comando -> docker cp "nome_do_seu_arquivo" "hash do servidor":/var/www/html
+
+
+Agora tudo que fizer sera refletido no seu container.

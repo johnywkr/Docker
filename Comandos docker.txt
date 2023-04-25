@@ -1,0 +1,16 @@
+Comandos Docker
+
+-> pull : puxa ou baixa , no comando abaixo fez o downloader do php apache
+   pull php:7.4.30-apache
+
+-> docker images
+  mostra as imagens intaladas
+
+-> docker ps 
+  mostra os containers instalados. docker ps -a , lista todos.
+
+-> docker stop "id do container"
+  Para o container que estava em execução 
+
+-> docker start "id do container"
+  Inicia o container

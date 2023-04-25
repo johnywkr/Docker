@@ -1,0 +1,48 @@
+Docker no sistema operacional windows.
+
+O que seria o docker?
+
+ Docker é uma extrutura de desenvolvimento de aplicação aberta, que ajuda o desenvolvedor, que possa facilmente criar,
+ empacotar, executar e enviar aplicativos como um "container".
+
+ Podemos ter varios containers, assim como é em um navio.
+ Esses container são portateis e altos suficientes, podem ser executados em praticamente qualquer local, pc, servidor ou em
+ nuvem. Não importa aonde sera executado desde que tenha o docker instalado. 
+
+ No Docker que se cria os container , o docker seria o navio e os container as aplicações. Podendo ter um container para o
+ Php, Sql, Apache e etc.
+
+ Podemos tambem criar varias versoes do php no docker, para realizar teste. Umas de suas vantagens, porque não sera necessario
+ dessinstalar uma pra usar a outra e uma não vai enterferir na outra.	 
+
+
+Agora vamos para instalação
+
+1 no seu navegador pesquise por instal docker windows.
+2 Consulte a documentação com os requisitos para windows.
+
+3 Precisaremos instalar o Wsl 2
+  Abra o powershel como administrador e cole o comando -> wsl --istall
+  Depois de completo a instalação, só tera efeito depois que reeniciar o pc.
+
+4 Retorne a documentação para realizar o downloader para o windows, e instale .
+
+
+ERROOOO
+
+Apos a instalação ao executar o docker fechava sozinho!
+
+Para resolver isso dei uma gugada e achei algo pra resolver 
+
+1 - Vamos precisar habilitar o hyper-v com usando o power shell
+
+2 - Abrindo powershell execute o comando -> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+    Vai pedir pra reeniciar o pc , aceita e pronto finalizado..
+
+Link onde achei a solução  https://learn.microsoft.com/pt-br/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+
+
+Pronto até aqui conhecemos o docker e fizemos a instalação...
+
+
+

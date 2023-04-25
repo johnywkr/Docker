@@ -1,0 +1,47 @@
+Criando hambiente PHP com Docker...
+ 
+Depois de ja ter instalado o docker no windows
+
+1 - O primeiro passo é abrir o docker hub, Pesquisar por php e baixar a imagem oficial do php para o docker.
+  obs: baixar o php com apache
+
+link https://hub.docker.com/_/php/tags?page=1&name=7.4.30-apache
+
+2 - copie o comando -> docker pull php:7.4.30-apache  e cole no powershel. esse comando vai fazer o download da imagem para o nosso docker.
+
+
+
+Agora vamos criar um container..
+
+O que é um container ? Como se fosse, uma mine maquina virtual com a aplicação que a gente quer...
+
+Para poder criar um container com a imagem que baixamos , vamos usar o comando abaixo:
+
+   -> docker run -p 80:80 -d --name serve-php php:7.4.30-apache
+
+1 - O Parametro -p 80:80 sera a porta que iremos usar.
+2 - php: é o repositorio que iremos usar
+3 - 7.4.30-apache a versão que iremos usar
+4 - --name serve-php para dar nome ao container
+
+
+Para, 'parar' um sistema/container rodando vamos usar o comando abaixo:
+
+   -> docker stop "id do container que ser parado"
+
+e para iniciar o sistema..
+
+   -> docker start "id do container"
+
+
+Como utilizar o servidor do container criado para nossas aplicaçãoes??
+
+1 - Pelo terminal , encontre a pasta que esteja sua aplicação.
+
+	cd \dev  pasta com meu arquivo
+
+2 - com o comando -> docker cp "nome_do_seu_arquivo" "hash do servidor":/var/www/html
+
+  * O que esse comando ta fazendo? copiando o arquivo para o servidor , atraves do nome do seu arquivo e do id do container
+
+ Esse comando vai copiar o nosso arquivo para o servidor , para visualizarmos nossa aplicação..
